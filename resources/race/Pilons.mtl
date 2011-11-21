@@ -1,0 +1,459 @@
+newmtl Balconies:blinn1SG
+illum 4
+Kd 0.17 0.17 0.17
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl Balconies:lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Doors:lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Doors:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Material__800
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.38
+newmtl MiscCityAssets:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl MiscCityAssets2:blinn2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Assets_01.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl MiscCityAssets2:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Assets_01.jpg
+Ni 1.00
+newmtl MiscCityAssets3:blinn2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Assets_01.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl MiscCityAssets3:blinn4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Assets_01.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl MiscCityAssets3:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Assets_01.jpg
+Ni 1.00
+newmtl Trees:Tree:ZSphere_1_ZSphere_1_blinnSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd TreeBarkTXTR.jpg
+Ni 1.00
+newmtl Trees:Tree:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd LeavesYellowTXTR.png
+Ni 1.00
+newmtl Trees:palmLight3LeafShaderSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Trees:palmLight3ShaderSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Walls:lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Wall_Comp_01.jpg
+bump Wall_Comp_01.jpg -bm -0.5
+Ni 1.00
+newmtl Windows1:lambert9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl badge1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd nodamage.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 64.00
+newmtl black
+illum 4
+Kd 0.13 0.13 0.13
+Ka 0.13 0.13 0.13
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.90 0.90 0.90
+newmtl c0
+illum 4
+Kd 0.62 0.00 0.00
+Ka 0.82 0.60 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.88 0.88 0.88
+Ns 22.63
+newmtl california:Material__80SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.41 0.41 0.41
+newmtl california:Material__81SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.41 0.41 0.41
+newmtl california:Material__82SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.41 0.41 0.41
+newmtl california:Material__83SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.41 0.41 0.41
+newmtl california:badgeSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd nodamage.png
+Ni 1.50
+Ks 0.50 0.50 0.50
+Ns 48.00
+newmtl california:blackSG
+illum 4
+Kd 0.13 0.13 0.13
+Ka 0.13 0.13 0.13
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 0.90 0.90 0.90
+Ns 36.00
+newmtl california:c0SG
+illum 4
+Kd 1.00 0.00 0.00
+Ka 0.82 0.60 0.00
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 0.88 0.88 0.88
+Ns 33.00
+newmtl california:glassSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.01 0.05 0.08
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 0.98 0.98 0.98
+Ns 35.00
+newmtl california:grille1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd grille1.png
+Ni 1.50
+Ks 0.75 0.75 0.75
+Ns 41.00
+newmtl california:grille2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd grille2.png
+Ni 1.50
+Ks 0.84 0.84 0.84
+Ns 29.00
+newmtl california:inner_rim1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.50 0.50 0.50
+newmtl california:inner_rim2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.50 0.50 0.50
+newmtl california:inner_rim3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.50 0.50 0.50
+newmtl california:inner_rimSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.50
+Ks 0.50 0.50 0.50
+newmtl california:lights0SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd lights.png
+Ni 1.50
+Ks 0.87 0.87 0.87
+Ns 33.00
+newmtl california:lights1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd lights.png
+Ni 1.50
+Ks 0.95 0.95 0.95
+Ns 35.00
+newmtl california:mirrorSG
+illum 4
+Kd 0.42 0.42 0.42
+Ka 0.42 0.42 0.42
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 0.93 0.93 0.93
+Ns 28.00
+newmtl california:nodmgSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd nodamage.png
+Ni 1.50
+Ks 0.89 0.89 0.89
+Ns 37.00
+newmtl california:tire1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd tireA0.png
+Ni 1.50
+Ks 0.34 0.34 0.34
+Ns 36.00
+newmtl california:tire2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd tireA0.png
+Ni 1.50
+Ks 0.34 0.34 0.34
+Ns 36.00
+newmtl california:tire3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd tireA0.png
+Ni 1.50
+Ks 0.34 0.34 0.34
+Ns 36.00
+newmtl california:tireSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd tireA0.png
+Ni 1.50
+Ks 0.34 0.34 0.34
+Ns 36.00
+newmtl california:undercarriageSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd undercarriage.png
+Ni 1.50
+Ks 0.50 0.50 0.50
+Ns 39.00
+newmtl grille1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd grille1.png
+Ni 1.00
+Ks 0.75 0.75 0.75
+Ns 39.40
+newmtl grille3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd grille2.png
+Ni 1.00
+Ks 0.84 0.84 0.84
+Ns 17.15
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl inner_rim
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 42.22
+newmtl lambert8SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Turnsign.jpg
+Ni 1.00
+newmtl lambert9SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert11SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert12SG
+illum 4
+Kd 0.31 0.31 0.31
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lights0
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd lights.png
+Ni 1.00
+Ks 0.59 0.59 0.59
+newmtl mirror
+illum 4
+Kd 0.42 0.42 0.42
+Ka 0.42 0.42 0.42
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.93 0.93 0.93
+Ns 16.00
+newmtl nurbsToPoly1_blinnSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Circuit_TXTR.jpg
+Ni 1.00
+newmtl pasted__lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd RoadSigns.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl tire
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd tireA0.png
+Ni 1.00
+Ks 0.38 0.38 0.38
+Ns 27.86
+newmtl tire3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd tireA0.png
+Ni 1.00
+Ks 0.38 0.38 0.38
+Ns 27.86
+newmtl undercarriage
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd undercarriage.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 34.30

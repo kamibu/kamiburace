@@ -1,0 +1,134 @@
+newmtl Material__800
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd wheel.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.38
+newmtl Trees:Tree:ZSphere_1_ZSphere_1_blinnSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd TreeBarkTXTR.jpg
+Ni 1.00
+newmtl Trees:Tree:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd LeavesYellowTXTR.png
+Ni 1.00
+newmtl Trees:palmLight3LeafShaderSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Trees:palmLight3ShaderSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl badge1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd nodamage.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 64.00
+newmtl black
+illum 4
+Kd 0.13 0.13 0.13
+Ka 0.13 0.13 0.13
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.90 0.90 0.90
+newmtl c0
+illum 4
+Kd 0.62 0.00 0.00
+Ka 0.82 0.60 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.88 0.88 0.88
+Ns 22.63
+newmtl grille1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd grille1.png
+Ni 1.00
+Ks 0.75 0.75 0.75
+Ns 39.40
+newmtl grille3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd grille2.png
+Ni 1.00
+Ks 0.84 0.84 0.84
+Ns 17.15
+newmtl inner_rim
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 42.22
+newmtl lights0
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd lights.png
+Ni 1.00
+Ks 0.59 0.59 0.59
+newmtl mirror
+illum 4
+Kd 0.42 0.42 0.42
+Ka 0.42 0.42 0.42
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.93 0.93 0.93
+Ns 16.00
+newmtl nurbsToPoly1_blinnSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Circuit_TXTR.jpg
+Ni 1.00
+newmtl tire
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd tireA0.png
+Ni 1.00
+Ks 0.38 0.38 0.38
+Ns 27.86
+newmtl tire3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.38 0.38 0.38
+Ns 27.86
+newmtl undercarriage
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.80 0.80 0.80
+Tf 1.00 1.00 1.00
+map_Kd undercarriage.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 34.30
