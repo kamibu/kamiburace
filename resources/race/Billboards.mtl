@@ -383,13 +383,7 @@ Tf 1.00 1.00 1.00
 Ni 1.00
 newmtl lambert10SG
 illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lambert11SG
-illum 4
-Kd 1.00 1.00 1.00
+Kd 0.00 0.81 0.19
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 Ni 1.00
@@ -412,6 +406,12 @@ Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd FP.jpg
+Ni 1.00
+newmtl lambert15SG
+illum 4
+Kd 0.50 1.00 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
 Ni 1.00
 newmtl lights0
 illum 4
