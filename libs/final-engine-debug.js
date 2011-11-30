@@ -186,19 +186,19 @@ Object.defineProperty( Number.prototype, "isPowerOfTwo", {
  *
  * <p>To create a UUID, call the static {@link generate} method.</p>
  *
- * <pre class="sh_javascript">
+ * <code>
  * function MyConstructor() {
  *     this.uuid = UUID.generate();
  * }
- * </pre>
+ </code>
  *
  * <p>The {@link generate} method generates UUID that is in a compressed form,
  * suitable for sending through the network, and so contains unprintable characters too.</p>
  *
  * <p>If you want a printable version, you should generate a UUID in canonical form:</p>
- * <pre class="sh_javascript">
+ * <code>
  * this.uuid = UUID.generateCanonicalForm();
- * </pre>
+ </code>
  *
  * You can also convert between the forms with {@link toCanonicalForm} and {@link fromCanonicalForm}.
  */
@@ -518,20 +518,20 @@ EventEmitter.prototype = {
  * Handle waiting a group of events to finish.
  *
  * Consider the case that you need two wait for all the files to finish loading:
- * <pre class="sh_javascript">
+ * <code>
  * loader.load( 'file1', callback );
  * loader.load( 'file2', callback );
- * </pre>
+ </code>
  *
  * You can use the EventWaiter to call a function when all files have finished loading.
- * <pre class="sh_javascript">
+ * <code>
  * var w = new EventWaiter();
  * loader.load( 'file1', w.callback() );
  * loader.load( 'file2', w.callback() );
  * w.on( 'complete', function() {
  *     console.log( 'finished loading' );
  * } );
- * </pre>
+ </code>
  * @constructor
  * @extends EventEmitter
  */
@@ -1084,17 +1084,17 @@ Matrix3.prototype = {
  *
  * <p>The usual way to instantiate a Vector3 is to pass three numbers:</p>
  *
- * <pre class="sh_javascript">
+ * <code>
  * var v = new Vector3( 1, 2, 3 );
- * </pre>
+ </code>
  *
  * <p>You can also pass an array with 3 elements:</p>
- * <pre class="sh_javascript">
+ * <code>
  * var v = new Vector3( [ 1, 2, 3 ] );
- * </pre>
+ </code>
  *
  * <p>Or another vector that will be copied:</p>
- * <pre class="sh_javascript">
+ * <code>
  * var v = new Vector3( [ 1, 2, 3 ] );
  * var v2 = new Vector3( v );
  */
@@ -1775,7 +1775,7 @@ Transform.prototype = {
         pos[ 2 ] = a[ 14 ];
 
         TempVars.lock();
-        var mat = TempVars.getMatrix4().set( a );
+        var mat = TempVars.getMatrix4().set( matrix );
         this.orientation.fromMatrix3( mat.getRotationMatrix( TempVars.getMatrix3() ) );
         TempVars.release();
 
@@ -4938,6 +4938,50 @@ Sphere.extend( Drawable );
 // extern
 var Buffer, Drawable, Mesh, VertexAttribute;
 
+/**
+ * @class
+ * Display background images on a 3D scene.
+ *
+ * <p>
+ * The skybox is a box that has the camera on its center and has a texture on each
+ * of its (internal) sides.
+ * </p>
+ *
+ * <p>To instantiate the Skybox, pass an array of 6 textures as a parameter to the constructor.
+ * The order is the following: (following the order of the WebGL specification constants):</p>
+ * <ul>
+ * <li>positive x</li>
+ * <li>negative x</li>
+ * <li>positive y</li>
+ * <li>negative y</li>
+ * <li>positive z</li>
+ * <li>negative z</li>
+ * </ul>
+ *
+ * After instantiating the skybox, you have to add it to the Scene.
+ *
+ * <p>Example:</p>
+ * <code>
+ * var skybox = new Skybox( [
+ *  'skybox/posx.jpg',
+ *  'skybox/negx.jpg',
+ *  'skybox/posy.jpg',
+ *  'skybox/negy.jpg',
+ *  'skybox/posz.jpg',
+ *  'skybox/negz.jpg'
+ * ] );
+ *
+ * scene.appendChild( skybox );
+ </code>
+ *
+ * <p>You can also pass a second parameter to the Skybox to denote the size of skybox (e.g. distance from camera). However, you should be careful that it does not exceed the camera zfar value (by default 1000) or it won't be rendered.</p>
+ *
+ * @extends Drawable
+ *
+ * @constructor
+ * @param {Array} sources
+ * @param {Number} scale
+ */
 function Skybox( sources, scale ) {
     scale = scale || 500;
 
@@ -5027,6 +5071,70 @@ Skybox.prototype = {
 };
 
 Skybox.extend( Drawable );
+/*global
+    Buffer           :  false,
+    Drawable         :  false,
+    Mesh             :  false,
+    VertexAttribute  :  false
+*/
+
+/**
+ * @class
+ * A floor rectangle.
+ *
+ * @extends Drawable
+ *
+ * @constructor
+ */
+function Floor() {
+    var x0 = -500;
+    var z0 = 500;
+    var x1 = 500;
+    var z1 = -500;
+
+    Drawable.call( this );
+    var vertices = [
+        x0, 0, z0,
+        x1, 0, z0,
+        x0, 0, z1,
+        x1, 0, z1
+    ];
+
+    var uvcoords = [
+        0, 0,
+        0, 1,
+        1, 0,
+        1, 1
+    ];
+    var normals = [
+        0, 1, 0,
+        0, 1, 0,
+        0, 1, 0,
+        0, 1, 0
+    ];
+
+    var indices = [ 0, 1, 2, 2, 1, 3 ];
+
+    vertices = new Buffer().setData( vertices );
+    uvcoords = new Buffer().setData( uvcoords );
+    normals = new Buffer().setData( normals );
+
+    vertices = new VertexAttribute( 'Position' ).setBuffer( vertices );
+    uvcoords = new VertexAttribute( 'UVCoord' ).setBuffer( uvcoords ).setSize( 2 );
+    normals = new VertexAttribute( 'Normal' ).setBuffer( normals );
+
+    indices = new Buffer( Buffer.ELEMENT_BUFFER ).setData( indices );
+
+    var m = new Mesh();
+    m.setVertexAttribute( vertices );
+    m.setVertexAttribute( normals );
+    m.setVertexAttribute( uvcoords );
+    m.setIndexBuffer( indices );
+
+    this.mesh = m;
+}
+
+Floor.extend( Drawable );
 /**
  * @interface
  * Interface for input devices.
@@ -5106,7 +5214,7 @@ Keyboard.prototype = {
 
         // call associated actions
         actions.forEach( function( action ) {
-            console.log( 'calling action' );
+            //console.log( 'calling action' );
             action.callback( e );
 
             if ( action.endCallback ) {
@@ -5114,9 +5222,9 @@ Keyboard.prototype = {
             }
 
             if ( action.repeat ) {
-                console.log( 'setting repeat interval' );
+                //console.log( 'setting repeat interval' );
                 action.repeatInterval = setInterval( action.callback, action.speed );
-                console.log( action.repeatInterval );
+                //console.log( action.repeatInterval );
             }
         } );
 
@@ -5131,10 +5239,10 @@ Keyboard.prototype = {
         */
     },
     handleKeyUp: function( e ) {
-        console.log( 'key up ' + e.keyCode );
+        //console.log( 'key up ' + e.keyCode );
         var actions = this.actions[ e.keyCode ], keyData = this.getKeyData( e.keyCode );
         if ( !actions ) {
-            console.log( 'no actions' );
+            //console.log( 'no actions' );
             return;
         }
 
@@ -5146,11 +5254,11 @@ Keyboard.prototype = {
 
         actions.forEach( function( action ) {
             if ( action.endCallback ) {
-                console.log( 'calling end callback' );
+                //console.log( 'calling end callback' );
                 action.endCallback( e );
             }
             if ( action.repeatInterval ) {
-                console.log( 'clearing interval' );
+                //console.log( 'clearing interval' );
                 clearInterval( action.repeatInterval );
                 action.repeatInterval = false;
             }
@@ -5163,7 +5271,7 @@ Keyboard.prototype = {
         clearTimeout( keyData.upCallback );
         keyData.upCallback = 0;
 
-        console.log( 'unsetting' );
+        //console.log( 'unsetting' );
         this.unsetPressed( e.keyCode );
     },
     /**
@@ -5693,11 +5801,11 @@ UIComponent.prototype = {
      *
      * The callback is passed a HTMLElement instance, that can be added somewhere in the HTML document.
      *
-     * <pre class="sh_javascript">
+     * <code>
      * new UIComponent().loadHTML( "frontend/menu.html", function( menuTag ) {
      *     document.body.appendChild( menuTag );
      * } );
-     * </pre>
+     </code>
      *
      * @param {String} url
      * @param {Function} callback
@@ -6785,7 +6893,7 @@ function SoundManager( scene, camera ) {
     this.playing = {};
     this.callbacks = {};
 
-    if ( window.webkitAudioContext ) {
+    if ( webkitAudioContext ) {
         this.context = new webkitAudioContext();
         this.compressor = this.context.createDynamicsCompressor();
         this.compressor.connect( this.context.destination );
@@ -6984,13 +7092,13 @@ SoundManager.prototype = {
  *
  * The most basic Final Engine application is just the creation of an instance of Application:
  *
- * <pre class="sh_javascript">
+ * <code>
  * var app = new Application();
- * </pre>
+ </code>
  *
  * Most applications will import some assets, add them to the scene and update them:
  *
- * <pre class="sh_javascript">
+ * <code>
  * var app = new Application();
  *
  * var character = null;
@@ -7008,7 +7116,7 @@ SoundManager.prototype = {
  *         // character has not loaded yet
  *     }
  * };
- * </pre>
+ </code>
  *
  * You can get access to the instantiated application from any part of your code by calling the static method <a href="#getInstance">Application.getInstance()</a>.</p>
  *
@@ -7016,7 +7124,7 @@ SoundManager.prototype = {
  *
  * You can extend the Application class to write the main application code inside a class.
  *
- * <pre class="sh_javascript">
+ * <code>
  * function MyApplication() {
  *    Application.call( this );
  *
