@@ -1,0 +1,119 @@
+# Blender MTL File: ''
+# Material Count: 11
+newmtl california:badgeSG_no_nodamage.png
+Ns 41.176471
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd nodamage.png
+
+
+newmtl california:blackSG
+Ns 29.411765
+Ka 0.000000 0.000000 0.000000
+Kd 0.083200 0.083200 0.083200
+Ks 0.450000 0.450000 0.450000
+Ni 1.000000
+d 0.000000
+illum 2
+
+
+newmtl california:c0SG
+Ns 27.450980
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.000000 0.000000
+Ks 0.440000 0.440000 0.440000
+Ni 1.000000
+d 0.000000
+illum 2
+
+
+newmtl california:glassSG
+Ns 27.450980
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.490000 0.490000 0.490000
+Ni 1.000000
+d 0.000000
+illum 2
+
+
+newmtl california:grille1SG__grille1.png
+Ns 35.294118
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.375000 0.375000 0.375000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd grille1.png
+
+
+newmtl california:grille2SG__grille2.png
+Ns 21.568627
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.420000 0.420000 0.420000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd grille2.png
+
+
+newmtl california:lights0SG__lights.png
+Ns 27.450980
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.435000 0.435000 0.435000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd lights.png
+
+
+newmtl california:lights1SG__lights.png
+Ns 27.450980
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.475000 0.475000 0.475000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd lights.png
+
+
+newmtl california:mirrorSG
+Ns 21.568627
+Ka 0.000000 0.000000 0.000000
+Kd 0.268800 0.268800 0.268800
+Ks 0.465000 0.465000 0.465000
+Ni 1.000000
+d 0.000000
+illum 2
+
+
+newmtl california:nodmgSG_no_nodamage.png
+Ns 29.411765
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.445000 0.445000 0.445000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd nodamage.png
+
+
+newmtl california:undercarri_undercarriage.png
+Ns 33.333333
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd undercarriage.png
+
+
