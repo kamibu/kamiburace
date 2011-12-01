@@ -140,48 +140,45 @@ app.importer.load( 'race/Wheel4.obj', w.callback( function( w ) {
 } ) );
 w.on( 'complete', onPartsLoaded );
 
-document.onkeydown = function( e ){
-    switch(e.keyCode)
-    {
-        case 32:
-            carBody.setHBrake(1);
-            return false;
-        case 38:
-            carBody.setAccelerate(0.7);
-            return false;
-        case 40:
-            carBody.setAccelerate( -0.2 );
-            return false;
-        case 37:
-            carBody.setSteer([0, 1], 1);
-            return false;
-        case 39:
-            carBody.setSteer([0, 1], -1);
-            return false;
-    }
-}
+app.input.onKey( 'DOWN_ARROW', { 
+    callback: function() {
+        carBody.setAccelerate( -0.2 );
+    }, endCallback: function() {
+        carBody.setAccelerate( 0 );
+    } 
+} );
 
-document.onkeyup = function( e ){
-    switch(e.keyCode)
-    {
-        case 32:
-            carBody.setHBrake(0);
-            return false;
-        case 38:
-            carBody.setAccelerate(0);
-            return false;
-        case 40:
-            carBody.setAccelerate(0);
-            return false;
-        case 37:
-            carBody.setSteer([0, 1], 0);
-            return false;
-        case 39:
-            carBody.setSteer([0, 1], 0);
-            return false;
-    }
-}
+app.input.onKey( 'UP_ARROW', {
+    callback: function() {
+        carBody.setAccelerate( 0.7 );
+    }, endCallback: function() {
+        carBody.setAccelerate( 0 );
+    } 
+} );
 
+app.input.onKey( 'LEFT_ARROW', {
+    callback: function() {
+        carBody.setSteer( [ 0, 1 ], 1 );
+    }, endCallback: function() {
+        carBody.setSteer( [0, 1], 0 );
+    }    
+} );
+
+app.input.onKey( 'RIGHT_ARROW', { 
+    callback: function() {
+        carBody.setSteer( [0, 1], -1 );
+    }, endCallback: function() {
+        carBody.setSteer( [0, 1], 0 );
+    } 
+} );
+
+app.input.onKey( 'SPACE', {
+    callback: function() {
+        carBody.setHBrake( 1 );
+    }, endCallback: function() {
+        carBody.setHBrake( 0 );
+    } 
+} );
 
 app.update = function( dt ) {
     system.integrate( dt * 0.001 );
