@@ -663,12 +663,11 @@ Matrix4.prototype = {
      */
     set: function( src ) {
         if ( src instanceof Array ) {
-            console.log( src );		
             throw 'error';
         }
-	if ( src instanceof Float32Array ) {
-	    this.data.set( src );
-	    return this;
+        if( src instanceof Float32Array ) {
+            this.data.set( src );
+            return this;
         }
         this.data.set( src.data );
         return this;
@@ -5221,7 +5220,6 @@ Keyboard.prototype = {
 
         // call associated actions
         actions.forEach( function( action ) {
-            console.log( 'calling action' );
             action.callback( e );
 
             if ( action.endCallback ) {
@@ -5229,9 +5227,7 @@ Keyboard.prototype = {
             }
 
             if ( action.repeat ) {
-                console.log( 'setting repeat interval' );
                 action.repeatInterval = setInterval( action.callback, action.speed );
-                console.log( action.repeatInterval );
             }
         } );
 
@@ -5246,10 +5242,8 @@ Keyboard.prototype = {
         */
     },
     handleKeyUp: function( e ) {
-        console.log( 'key up ' + e.keyCode );
         var actions = this.actions[ e.keyCode ], keyData = this.getKeyData( e.keyCode );
         if ( !actions ) {
-            console.log( 'no actions' );
             return;
         }
 
@@ -5261,11 +5255,9 @@ Keyboard.prototype = {
 
         actions.forEach( function( action ) {
             if ( action.endCallback ) {
-                console.log( 'calling end callback' );
                 action.endCallback( e );
             }
             if ( action.repeatInterval ) {
-                console.log( 'clearing interval' );
                 clearInterval( action.repeatInterval );
                 action.repeatInterval = false;
             }
@@ -5278,7 +5270,6 @@ Keyboard.prototype = {
         clearTimeout( keyData.upCallback );
         keyData.upCallback = 0;
 
-        console.log( 'unsetting' );
         this.unsetPressed( e.keyCode );
     },
     /**
