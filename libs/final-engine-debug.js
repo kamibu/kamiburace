@@ -584,11 +584,12 @@ EventWaiter.prototype = {
      * Create a callback that will wait to be called.
      * @param {String} title
      */
-	callback: function( title ) {
-        this.waitMore( title );
+	callback: function( callback ) {
+        this.waitMore();
         var that = this;
         return function() {
-            that.waitLess( title );
+            callback.apply( {}, arguments );
+            that.waitLess();
         };
     },
     /**
@@ -602,6 +603,7 @@ EventWaiter.prototype = {
      * @param {String} title
      */
 	waitLess: function( title ) {
+        title = title || "";
         var i = this._waitingList.indexOf( title );
         this._waitingList.splice( i, 1 );
         this.emit( 'one', title );
@@ -662,6 +664,10 @@ Matrix4.prototype = {
     set: function( src ) {
         if ( src instanceof Array ) {
             throw 'error';
+        }
+        if( src instanceof Float32Array ) {
+            this.data.set( src );
+            return this;
         }
         this.data.set( src.data );
         return this;
@@ -1775,7 +1781,7 @@ Transform.prototype = {
         pos[ 2 ] = a[ 14 ];
 
         TempVars.lock();
-        var mat = TempVars.getMatrix4().set( matrix );
+        var mat = TempVars.getMatrix4().set( a );
         this.orientation.fromMatrix3( mat.getRotationMatrix( TempVars.getMatrix3() ) );
         TempVars.release();
 
@@ -1995,7 +2001,8 @@ var Renderer = function( canvas, width, height ) {
     /*
      * This should change to .getContext( 'webgl' ) at some point.
      */
-    var gl = this.gl = this.canvas.getContext( 'experimental-webgl' );
+    var gl = this.gl = this.canvas.getContext( 'experimental-webgl', {
+        preserveDrawingBuffer: true } );
     if ( this.gl === null ) {
         throw 'Could not initialize WebGL';
     }
@@ -5214,7 +5221,6 @@ Keyboard.prototype = {
 
         // call associated actions
         actions.forEach( function( action ) {
-            //console.log( 'calling action' );
             action.callback( e );
 
             if ( action.endCallback ) {
@@ -5222,9 +5228,7 @@ Keyboard.prototype = {
             }
 
             if ( action.repeat ) {
-                //console.log( 'setting repeat interval' );
                 action.repeatInterval = setInterval( action.callback, action.speed );
-                //console.log( action.repeatInterval );
             }
         } );
 
@@ -5239,10 +5243,8 @@ Keyboard.prototype = {
         */
     },
     handleKeyUp: function( e ) {
-        //console.log( 'key up ' + e.keyCode );
         var actions = this.actions[ e.keyCode ], keyData = this.getKeyData( e.keyCode );
         if ( !actions ) {
-            //console.log( 'no actions' );
             return;
         }
 
@@ -5254,11 +5256,9 @@ Keyboard.prototype = {
 
         actions.forEach( function( action ) {
             if ( action.endCallback ) {
-                //console.log( 'calling end callback' );
                 action.endCallback( e );
             }
             if ( action.repeatInterval ) {
-                //console.log( 'clearing interval' );
                 clearInterval( action.repeatInterval );
                 action.repeatInterval = false;
             }
@@ -5271,7 +5271,6 @@ Keyboard.prototype = {
         clearTimeout( keyData.upCallback );
         keyData.upCallback = 0;
 
-        //console.log( 'unsetting' );
         this.unsetPressed( e.keyCode );
     },
     /**
