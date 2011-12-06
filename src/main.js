@@ -13,7 +13,7 @@ var app = new Application();
 var system = jiglib.PhysicsSystem.getInstance();
 system.setCollisionSystem( true );
 system.setSolverType( 'NORMAL' );
-system.setGravity( new Vector3D( 0, -9.8, 0, 0 ) );
+system.setGravity( new Vector3D( 0, -15, 0, 0 ) );
 
 
 //Load the terrain for collision
@@ -76,12 +76,7 @@ var brake = -0.2;
 
 app.input.onKey( 'DOWN_ARROW', { 
     callback: function() {
-        if ( getSpeed() <= 10 ) {
-            carBody.setAccelerate( 0.2 );
-            return;
-        }
-        brake -= 0.1;
-        carBody.setAccelerate( brake );
+        carBody.setAccelerate( -0.5 );
     }, endCallback: function() {
         console.log( 'brake end', brake );
         brake = -0.2;
