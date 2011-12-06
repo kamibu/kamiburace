@@ -116,6 +116,9 @@ app.input.onKey( 'SPACE', {
     } 
 } );
 
+
+var idealCamera = null;
+
 loader.on( 'complete', function() {
 
     //Setup physics
@@ -155,9 +158,8 @@ loader.on( 'complete', function() {
     carBody.setupWheel( 3, new Vector3D(  0.9, -0.35, -1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
 
     //Setup 3D Graphics
-    carMesh.appendChild( app.camera );
-    app.camera.setPosition( new Vector3( [ 0, 1, -10 ] ) );
-    app.camera.rotate( Y_AXIS, Math.PI );
+    idealCamera = new SceneNode().setPosition( new Vector3( [ 0, 2, -7 ] ) );
+    carMesh.appendChild( idealCamera );
 
     app.scene.appendChild( carMesh );
     carMesh.appendChild( wheel0 );
@@ -174,10 +176,37 @@ loader.on( 'complete', function() {
 
     app.update = function( dt ) {
         system.integrate( dt * 0.001 );
+
+        var targetPosition = idealCamera.getAbsolutePosition();
+        app.camera.setPosition( app.camera.getPosition().scale( 0.9 ).add( targetPosition.scale( 0.1 ) ) );
+        lookAt( app.camera, carMesh, Y_AXIS );
+
+
         updateWheelsPositions();
         updateGUI();
     }
 } );
+
+function lookAt( camera, target, upVector ) {
+    var z = camera.getAbsolutePosition().subtract( target.getAbsolutePosition() ).normalize();
+    var y = upVector.clone().subtract( z.clone().scale( z.dot( upVector ) ) ).normalize();
+    var x = y.clone().cross( z );
+
+    var m = new Matrix3();
+    m.data[ 0 ] = x.data[ 0 ];
+    m.data[ 1 ] = x.data[ 1 ];
+    m.data[ 2 ] = x.data[ 2 ];
+
+    m.data[ 3 ] = y.data[ 0 ];
+    m.data[ 4 ] = y.data[ 1 ];
+    m.data[ 5 ] = y.data[ 2 ];
+
+    m.data[ 6 ] = z.data[ 0 ];
+    m.data[ 7 ] = z.data[ 1 ];
+    m.data[ 8 ] = z.data[ 2 ];
+
+    camera.orientation = new Quaternion().fromMatrix3( m );
+}
 
 function updateWheelsPositions() {
     var wheels = carBody.get_wheels();
