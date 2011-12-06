@@ -72,6 +72,29 @@ app.importer.load( 'race/Wheel4.obj', loader.callback( function( w ) {
     wheel3 = w;
 } ) );
 
+app.importer.load( 'race/Pilons.obj', loader.callback( function( node ) {
+    app.scene.appendChild( node );
+} ) );
+app.importer.load( 'race/StreetLights.obj', loader.callback( function( node ) {
+    app.scene.appendChild( node );
+} ) );
+app.importer.load( 'race/RoadSigns.obj', loader.callback( function( node ) {
+    app.scene.appendChild( node );
+} ) );
+app.importer.load( 'race/Billboards.obj', loader.callback( function( node ) {
+    app.scene.appendChild( node );
+} ) );
+
+var skybox = new Skybox( [
+    'resources/skybox/east.jpg',
+    'resources/skybox/west.jpg',
+    'resources/skybox/up.jpg',
+    'resources/skybox/down.jpg',
+    'resources/skybox/north.jpg',
+    'resources/skybox/south.jpg'
+], 500 );
+app.scene.appendChild( skybox );
+
 var brake = -0.2;
 
 app.input.onKey( 'DOWN_ARROW', { 
