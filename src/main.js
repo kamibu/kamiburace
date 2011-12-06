@@ -95,14 +95,10 @@ var skybox = new Skybox( [
 ], 500 );
 app.scene.appendChild( skybox );
 
-var brake = -0.2;
-
 app.input.onKey( 'DOWN_ARROW', { 
     callback: function() {
-        carBody.setAccelerate( -0.5 );
+        carBody.setAccelerate( -2 );
     }, endCallback: function() {
-        console.log( 'brake end', brake );
-        brake = -0.2;
         carBody.setAccelerate( 0 );
     } 
 } );
@@ -158,7 +154,7 @@ loader.on( 'complete', function() {
     carBody.setCar( maxSteerAngle, steerRate, driveTorque );
     carBody.get_chassis().set_sideLengths( new Vector3D( width, height, depth, 0 ) );
     carBody.get_chassis().moveTo( new Vector3D( 0, 4, 0 ) );
-    carBody.get_chassis().set_mass( 80 );
+    carBody.get_chassis().set_mass( 100 );
     carBody.get_chassis().set_movable( false );
 
     setTimeout( function() {
