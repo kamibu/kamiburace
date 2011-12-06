@@ -171,10 +171,10 @@ loader.on( 'complete', function() {
     var dampingFrac = 0.9;
     var rays = 2;
                 
-    carBody.setupWheel( 0, new Vector3D( -0.9, -0.35,  1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
-    carBody.setupWheel( 1, new Vector3D(  0.9, -0.35,  1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
-    carBody.setupWheel( 2, new Vector3D( -0.9, -0.35, -1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
-    carBody.setupWheel( 3, new Vector3D(  0.9, -0.35, -1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
+    carBody.setupWheel( 0, new Vector3D( -0.85, -0.35,  1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
+    carBody.setupWheel( 1, new Vector3D(  0.85, -0.35,  1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
+    carBody.setupWheel( 2, new Vector3D( -0.85, -0.35, -1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
+    carBody.setupWheel( 3, new Vector3D(  0.85, -0.35, -1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
 
     //Setup 3D Graphics
     idealCamera = new SceneNode().setPosition( new Vector3( [ 0, 2, -7 ] ) );
@@ -186,10 +186,10 @@ loader.on( 'complete', function() {
     carMesh.appendChild( wheel2 );
     carMesh.appendChild( wheel3 );
 
-    window.wheel0 = wheel0.setPosition( new Vector3( [ -0.9, -0.5,  1.35 ] ) );
-    window.wheel1 = wheel1.setPosition( new Vector3( [ 0.9, -0.5,  1.35 ] ) );
-    window.wheel2 = wheel2.setPosition( new Vector3( [ -0.9, -0.5, -1.35 ] ) );
-    window.wheel3 = wheel3.setPosition( new Vector3( [ 0.9, -0.5, -1.35 ] ) );
+    window.wheel0 = wheel0.setPosition( new Vector3( [ -0.85, -0.5,  1.35 ] ) );
+    window.wheel1 = wheel1.setPosition( new Vector3( [ 0.85, -0.5,  1.35 ] ) );
+    window.wheel2 = wheel2.setPosition( new Vector3( [ -0.85, -0.5, -1.35 ] ) );
+    window.wheel3 = wheel3.setPosition( new Vector3( [ 0.85, -0.5, -1.35 ] ) );
 
     startTime = Date.now();
 
