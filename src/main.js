@@ -43,10 +43,11 @@ img.onload = loader.callback( function() {
         maxH: 149.45797729492188,
         dw: 1.259434312582016,
         dh: 1.037561058998108,
-        sw: 512,
-        sh: 512,
+        sw: 511,
+        sh: 511,
         heights: heights
     }, true );
+    terrain._material.friction = 0.5;
     system.addBody( terrain );
 } );
 
@@ -156,6 +157,7 @@ loader.on( 'complete', function() {
     carBody.get_chassis().moveTo( new Vector3D( 0, 4, 0 ) );
     carBody.get_chassis().set_mass( 100 );
     carBody.get_chassis().set_movable( false );
+    carBody.get_chassis()._material.friction = 1;
 
     setTimeout( function() {
         carBody.get_chassis().set_movable( true );
