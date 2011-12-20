@@ -48,6 +48,7 @@ img.onload = loader.callback( function() {
         heights: heights
     }, true );
     terrain._material.friction = 0.5;
+    window.terrain = terrain;
     system.addBody( terrain );
 } );
 
@@ -171,7 +172,7 @@ loader.on( 'complete', function() {
     var fwdFriction = 2;
     var restingFrac = 0.3;
     var dampingFrac = 0.9;
-    var rays = 2;
+    var rays = 10;
                 
     carBody.setupWheel( 0, new Vector3D( -0.85, -0.35,  1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
     carBody.setupWheel( 1, new Vector3D(  0.85, -0.35,  1.35 ), sideFriction, fwdFriction, travel, wheelRadius, restingFrac, dampingFrac, rays );
@@ -206,6 +207,8 @@ loader.on( 'complete', function() {
         updateWheelsPositions();
         updateGUI();
     }
+
+    window.titleInterval = setInterval( function() { document.title = carBody.getNumWheelsOnFloor(); }, 60 );
 } );
 
 function lookAt( camera, target, upVector ) {
